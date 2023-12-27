@@ -29,12 +29,12 @@
 
             const theMagicSauce = 4;
 
-            const ratio = diam / depth;
+            const ratio = Math.abs(diam / depth);
 
             if (ratio > theMagicSauce) {
-                answer.innerText = 'its a plate'
+                answer.innerText = "it's a plate"
             } else if (ratio <= theMagicSauce) {
-                answer.innerText = 'its a bowl'
+                answer.innerText = "it's a bowl"
             } else {
                 answer.innerText = 'what are you doing over there you animal'
             }
