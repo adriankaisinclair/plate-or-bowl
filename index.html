@@ -1,7 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head> Plate or Bowl?
+    <div>
+        <label>Please enter the dimensions of the object in the same unit</label>
+    </div>
 </head>
+<div>
+    <label>Diameter:</label>
+    <input type="text" id="diam" />
+</div>
+<div>
+    <label>Depth:</label>
+    <input type="text" id="depth" />
+</div>
+<div>
+    <label id="isBowlorPlate"></label>
+</div>
+<div>
+    <button type="button" id="checkButton">Is this a plate or a bowl?</button>
+    <script>
+        const button = document.getElementById("checkButton");
+        button.addEventListener('click', () => {
+            const answer = document.getElementById("isBowlorPlate");
+
+            const diam = document.getElementById("diam").value;
+            const depth = document.getElementById("depth").value;
+
+            const theMagicSauce = 4;
+
+            const ratio = diam / depth;
+
+            if (ratio > theMagicSauce) {
+                answer.innerText = 'its a bowl'
+            } else if (ratio <= theMagicSauce) {
+                answer.innerText = 'its a plate'
+            } else {
+                answer.innerText = 'what are you doing over there you animal'
+            }
+        })
+
+    </script>
+</div>
+
 <body>
 </body>
+
 </html>
